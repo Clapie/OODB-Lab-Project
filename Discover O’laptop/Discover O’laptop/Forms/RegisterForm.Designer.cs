@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userEmailText = new System.Windows.Forms.TextBox();
+            this.userNameText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,32 +39,32 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.userPhoneText = new System.Windows.Forms.TextBox();
+            this.userPasswordText = new System.Windows.Forms.TextBox();
+            this.userPassword1Text = new System.Windows.Forms.TextBox();
+            this.maleButton = new System.Windows.Forms.RadioButton();
+            this.femaleButton = new System.Windows.Forms.RadioButton();
+            this.userAddressText = new System.Windows.Forms.RichTextBox();
+            this.userDoB = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // textBox2
+            // userEmailText
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 105);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 22);
-            this.textBox2.TabIndex = 10;
+            this.userEmailText.Location = new System.Drawing.Point(167, 105);
+            this.userEmailText.Margin = new System.Windows.Forms.Padding(4);
+            this.userEmailText.Name = "userEmailText";
+            this.userEmailText.Size = new System.Drawing.Size(268, 22);
+            this.userEmailText.TabIndex = 10;
             // 
-            // textBox1
+            // userNameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 22);
-            this.textBox1.TabIndex = 9;
+            this.userNameText.Location = new System.Drawing.Point(167, 74);
+            this.userNameText.Margin = new System.Windows.Forms.Padding(4);
+            this.userNameText.Name = "userNameText";
+            this.userNameText.Size = new System.Drawing.Size(268, 22);
+            this.userNameText.TabIndex = 9;
             // 
             // label3
             // 
@@ -158,71 +158,75 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Confirm Password";
             // 
-            // textBox3
+            // userPhoneText
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 215);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(268, 22);
-            this.textBox3.TabIndex = 17;
+            this.userPhoneText.Location = new System.Drawing.Point(167, 215);
+            this.userPhoneText.Margin = new System.Windows.Forms.Padding(4);
+            this.userPhoneText.Name = "userPhoneText";
+            this.userPhoneText.Size = new System.Drawing.Size(268, 22);
+            this.userPhoneText.TabIndex = 17;
             // 
-            // textBox4
+            // userPasswordText
             // 
-            this.textBox4.Location = new System.Drawing.Point(167, 377);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(268, 22);
-            this.textBox4.TabIndex = 18;
+            this.userPasswordText.Location = new System.Drawing.Point(167, 377);
+            this.userPasswordText.Margin = new System.Windows.Forms.Padding(4);
+            this.userPasswordText.Name = "userPasswordText";
+            this.userPasswordText.PasswordChar = '*';
+            this.userPasswordText.Size = new System.Drawing.Size(268, 22);
+            this.userPasswordText.TabIndex = 18;
+            this.userPasswordText.UseSystemPasswordChar = true;
             // 
-            // textBox5
+            // userPassword1Text
             // 
-            this.textBox5.Location = new System.Drawing.Point(167, 414);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(268, 22);
-            this.textBox5.TabIndex = 19;
+            this.userPassword1Text.Location = new System.Drawing.Point(167, 414);
+            this.userPassword1Text.Margin = new System.Windows.Forms.Padding(4);
+            this.userPassword1Text.Name = "userPassword1Text";
+            this.userPassword1Text.PasswordChar = '*';
+            this.userPassword1Text.Size = new System.Drawing.Size(268, 22);
+            this.userPassword1Text.TabIndex = 19;
+            this.userPassword1Text.UseSystemPasswordChar = true;
             // 
-            // radioButton1
+            // maleButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(167, 141);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 21);
-            this.radioButton1.TabIndex = 21;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.maleButton.AutoSize = true;
+            this.maleButton.Location = new System.Drawing.Point(167, 141);
+            this.maleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.maleButton.Name = "maleButton";
+            this.maleButton.Size = new System.Drawing.Size(59, 21);
+            this.maleButton.TabIndex = 21;
+            this.maleButton.TabStop = true;
+            this.maleButton.Text = "Male";
+            this.maleButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // femaleButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(247, 141);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 21);
-            this.radioButton2.TabIndex = 22;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.femaleButton.AutoSize = true;
+            this.femaleButton.Location = new System.Drawing.Point(247, 141);
+            this.femaleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.femaleButton.Name = "femaleButton";
+            this.femaleButton.Size = new System.Drawing.Size(75, 21);
+            this.femaleButton.TabIndex = 22;
+            this.femaleButton.TabStop = true;
+            this.femaleButton.Text = "Female";
+            this.femaleButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.femaleButton.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // userAddressText
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(167, 247);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(268, 117);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
+            this.userAddressText.Location = new System.Drawing.Point(167, 247);
+            this.userAddressText.Margin = new System.Windows.Forms.Padding(4);
+            this.userAddressText.Name = "userAddressText";
+            this.userAddressText.Size = new System.Drawing.Size(268, 117);
+            this.userAddressText.TabIndex = 23;
+            this.userAddressText.Text = "";
             // 
-            // dateTimePicker1
+            // userDoB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 176);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(268, 22);
-            this.dateTimePicker1.TabIndex = 24;
+            this.userDoB.Location = new System.Drawing.Point(167, 176);
+            this.userDoB.Margin = new System.Windows.Forms.Padding(4);
+            this.userDoB.Name = "userDoB";
+            this.userDoB.Size = new System.Drawing.Size(268, 22);
+            this.userDoB.TabIndex = 24;
             // 
             // button1
             // 
@@ -233,6 +237,7 @@
             this.button1.TabIndex = 26;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkLabel1
             // 
@@ -253,21 +258,21 @@
             this.ClientSize = new System.Drawing.Size(485, 556);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.userDoB);
+            this.Controls.Add(this.userAddressText);
+            this.Controls.Add(this.femaleButton);
+            this.Controls.Add(this.maleButton);
+            this.Controls.Add(this.userPassword1Text);
+            this.Controls.Add(this.userPasswordText);
+            this.Controls.Add(this.userPhoneText);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userEmailText);
+            this.Controls.Add(this.userNameText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -281,8 +286,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userEmailText;
+        private System.Windows.Forms.TextBox userNameText;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -292,13 +297,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox userPhoneText;
+        private System.Windows.Forms.TextBox userPasswordText;
+        private System.Windows.Forms.TextBox userPassword1Text;
+        private System.Windows.Forms.RadioButton maleButton;
+        private System.Windows.Forms.RadioButton femaleButton;
+        private System.Windows.Forms.RichTextBox userAddressText;
+        private System.Windows.Forms.DateTimePicker userDoB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }

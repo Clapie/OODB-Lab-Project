@@ -13,113 +13,140 @@ namespace Discover_O_laptop.Forms
     public partial class ManageUserForm : Form
     {
         Database1Entities de = new Database1Entities();
-        string userID;
-        bool insert, update;
+        string userID = null;
+        bool insert = false, update = false;
+        DateTimePicker temp = new DateTimePicker();
 
         public ManageUserForm()
         {
             InitializeComponent();
-            dateTimePicker1.Value = DateTime.Now;
-            comboBox1.Items.Add("admin");
-            comboBox1.Items.Add("member");
+            userRole.Items.Add("admin");
+            userRole.Items.Add("member");
             loadData();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string email = textBox3.Text;
-            if (textBox2.Text == "")
+            //Empty Username
+            if (userNameText.Text == "")
             {
-                MessageBox.Show("Username must be filled");
+                MessageBox.Show("Username must be filled!");
                 return;
             }
 
-            if(textBox2.Text == (from User x in de.Users where x.UserName.Equals(textBox2.Text) select x.UserName).FirstOrDefault())
+            //Existing Username
+            Database1Entities de = new Database1Entities();
+            var search = (
+                from x in de.Users
+                where x.UserName.Equals(userNameText.Text)
+                select x.UserName
+                ).FirstOrDefault();
+
+            if (search == userNameText.Text)
             {
                 MessageBox.Show("Username already exists");
                 return;
             }
 
-            if (email == "")
+            //Empty Email
+            if (userEmailText.Text == "")
             {
-                MessageBox.Show("Email must be filled");
-                return;
-            }
-            
-            if (email.Contains('@') == false || email.Contains('.') == false)
-            {
-                MessageBox.Show("Email must contain '@' and '.'");
+                MessageBox.Show("Email must be filled!");
                 return;
             }
 
-            if(email[0] == '@' || email[0] == '.')
+            //Email does not contain @ && .
+            int fl = userEmailText.Text.IndexOf("@");
+            int fl1 = userEmailText.Text.IndexOf(".");
+            int len = userEmailText.Text.Length;
+
+            if (fl < 0 || fl1 < 0)
             {
-                MessageBox.Show("Email cannot start with '@' and '.'");
+                MessageBox.Show("Email must contain \'@\' and \'.\'");
                 return;
             }
 
-            if (email[email.Length - 1] == '@' || email[email.Length - 1] == '.')
+            //Email start with @ or .
+            if (fl == 0 || fl1 == 0)
             {
-                MessageBox.Show("Email cannot end with '@' and '.'");
+                MessageBox.Show("Email cannot start with \'@\' or \'.\'");
                 return;
             }
 
-            if (email[email.IndexOf('@') - 1] == '.' || email[email.IndexOf('@') + 1] == '.')
+            //Email end with @ or .
+            if (fl == len - 1 || fl1 == len - 1)
             {
-                MessageBox.Show("'@' and '.' cannot be placed beside each other");
-                return;
-            }
-            if (radioButton1.Checked == false  && radioButton2.Checked == false)
-            {
-                MessageBox.Show("Gender must be choosen!");
+                MessageBox.Show("Email cannot end with \'@\' or \'.\'");
                 return;
             }
 
-            if (dateTimePicker1.Value.CompareTo(DateTime.Now) > 0)
+            //Email contain @ and . but placed with each other
+            if (Math.Abs(fl - fl1) == 1)
+            {
+                MessageBox.Show("\'@\' and \'.\' cannot be placed beside each other");
+                return;
+            }
+
+            //Gender not chosen
+            if (!maleButton.Checked && !femaleButton.Checked)
+            {
+                MessageBox.Show("Gender must be chosen!");
+                return;
+            }
+
+            //DoB is greater than current date
+            if (userDoB.Value.CompareTo(DateTime.Now) > 0)
             {
                 MessageBox.Show("DOB Cannot greater than current date!");
                 return;
             }
 
-            if (textBox6.Text == "")
+            //Phone is empty
+            if (userPhoneText.Text == "")
             {
-                MessageBox.Show("Phone number must be filled");
+                MessageBox.Show("Phone number must be filled!");
                 return;
             }
 
-            if (textBox6.Text.All(Char.IsDigit) == false)
+            //phone is not digit
+            if (!userPhoneText.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Phone cannot contain alphanumeric");
+                MessageBox.Show("Phone must be numeric!");
                 return;
             }
 
-            if (textBox6.Text.Length != 12)
+            //phone length != 12 digits
+            if (userPhoneText.Text.Length != 12)
             {
                 MessageBox.Show("Phone must be 12 digits");
                 return;
             }
 
-            if (richTextBox1.Text == "")
+            //address is empty
+            if (userAddressText.Text == "")
             {
-                MessageBox.Show("Address must be filled");
+                MessageBox.Show("Address must be filled!");
                 return;
             }
 
-            if (richTextBox1.Text.Contains("Street"))
+            //address does not contain street
+            if (!userAddressText.Text.Contains("Street"))
             {
-                MessageBox.Show("Address must contains Street");
+                MessageBox.Show("Address must contain \'Street\'");
                 return;
             }
 
-            if (textBox4.Text == "")
+            //password is empty
+            if (userPasswordText.Text == "")
             {
-                MessageBox.Show("Password must be filled");
+                MessageBox.Show("Password must be filled!");
                 return;
             }
 
-            if (textBox4.Text.Length < 5)
+            //password length < 5
+            if (userPasswordText.Text.Length < 5)
             {
-                MessageBox.Show("Password length must be at least 5 characters or more");
+                MessageBox.Show("Password length must be 5 characters or more");
                 return;
             }
 
@@ -128,31 +155,31 @@ namespace Discover_O_laptop.Forms
                 User obj = new User();
 
                 obj.UserID = userID;
-                obj.UserName = textBox2.Text;
-                obj.UserEmail = textBox3.Text;
-                if (radioButton1.Checked == true) obj.UserGender = "Male";
+                obj.UserName = userNameText.Text;
+                obj.UserEmail = userEmailText.Text;
+                if (maleButton.Checked == true) obj.UserGender = "Male";
                 else obj.UserGender = "Female";
-                obj.UserDoB = dateTimePicker1.Value;
-                obj.UserPhone = textBox6.Text;
-                obj.UserAddress = richTextBox1.Text;
-                obj.UserPassword = textBox4.Text;
-                obj.UserRole = comboBox1.SelectedItem.ToString();
+                obj.UserDoB = userDoB.Value;
+                obj.UserPhone = userPhoneText.Text;
+                obj.UserAddress = userAddressText.Text;
+                obj.UserPassword = userPasswordText.Text;
+                obj.UserRole = userRole.SelectedItem.ToString();
                 de.Users.Add(obj);
             }
 
             if (update)
             {
-                var obj = (from x in de.Users where x.UserID.Equals(textBox1.Text) select x).FirstOrDefault();
+                var obj = (from x in de.Users where x.UserID.Equals(userIdText.Text) select x).FirstOrDefault();
 
-                obj.UserName = textBox2.Text;
-                obj.UserEmail = textBox3.Text;
-                if (radioButton1.Checked == true) obj.UserGender = "Male";
+                obj.UserName = userNameText.Text;
+                obj.UserEmail = userEmailText.Text;
+                if (maleButton.Checked == true) obj.UserGender = "Male";
                 else obj.UserGender = "Female";
-                obj.UserDoB = dateTimePicker1.Value;
-                obj.UserPhone = textBox6.Text;
-                obj.UserAddress = richTextBox1.Text;
-                obj.UserPassword = textBox4.Text;
-                obj.UserRole = comboBox1.SelectedItem.ToString();
+                obj.UserDoB = userDoB.Value;
+                obj.UserPhone = userPhoneText.Text;
+                obj.UserAddress = userAddressText.Text;
+                obj.UserPassword = userPasswordText.Text;
+                obj.UserRole = userRole.SelectedItem.ToString();
             }
 
             de.SaveChanges();
@@ -163,25 +190,25 @@ namespace Discover_O_laptop.Forms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            userIdText.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             if (dataGridView1.CurrentRow.Cells[1].Value.ToString() == "Male")
             {
-                radioButton1.Checked = true;
-                radioButton2.Checked = false;
+                maleButton.Checked = true;
+                femaleButton.Checked = false;
             }
 
             else
             {
-                radioButton1.Checked = false;
-                radioButton2.Checked = true;
+                maleButton.Checked = false;
+                femaleButton.Checked = true;
             }
-            textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            textBox6.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            richTextBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            comboBox1.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            userNameText.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            userEmailText.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            userDoB.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            userPhoneText.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            userAddressText.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            userPasswordText.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            userRole.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -194,26 +221,26 @@ namespace Discover_O_laptop.Forms
             button4.Enabled = true;
             button5.Enabled = true;
 
-            textBox1.Enabled = true;
-            textBox2.Enabled = true;
-            textBox3.Enabled = true;
-            textBox4.Enabled = true;
-            textBox6.Enabled = true;
+            userIdText.Enabled = true;
+            userNameText.Enabled = true;
+            userEmailText.Enabled = true;
+            userPasswordText.Enabled = true;
+            userPhoneText.Enabled = true;
 
-            radioButton1.Enabled = true;
-            radioButton2.Enabled = true;
+            maleButton.Enabled = true;
+            femaleButton.Enabled = true;
 
-            dateTimePicker1.Enabled = true;
+            userDoB.Enabled = true;
 
-            richTextBox1.Enabled = true;
+            userAddressText.Enabled = true;
 
-            comboBox1.Enabled = true;
+            userRole.Enabled = true;
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "")
+            if (userRole.Text == "")
             {
                 MessageBox.Show("Please select data first");
                 return;
@@ -227,31 +254,31 @@ namespace Discover_O_laptop.Forms
             button4.Enabled = true;
             button5.Enabled = true;
 
-            textBox1.Enabled = true;
-            textBox2.Enabled = true;
-            textBox3.Enabled = true;
-            textBox4.Enabled = true;
-            textBox6.Enabled = true;
+            userIdText.Enabled = true;
+            userNameText.Enabled = true;
+            userEmailText.Enabled = true;
+            userPasswordText.Enabled = true;
+            userPhoneText.Enabled = true;
 
-            radioButton1.Enabled = true;
-            radioButton2.Enabled = true;
+            maleButton.Enabled = true;
+            femaleButton.Enabled = true;
 
-            dateTimePicker1.Enabled = true;
+            userDoB.Enabled = true;
 
-            richTextBox1.Enabled = true;
+            userAddressText.Enabled = true;
 
-            comboBox1.Enabled = true;
+            userRole.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (userIdText.Text == "")
             {
                 MessageBox.Show("Please select data first");
                 return;
             }
 
-            var obj = (from x in de.Users where x.UserID.Equals(textBox1.Text) select x).FirstOrDefault();
+            var obj = (from x in de.Users where x.UserID.Equals(userIdText.Text) select x).FirstOrDefault();
             switch (MessageBox.Show("Are you sure want to delete this data?", "Message", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:
@@ -276,20 +303,20 @@ namespace Discover_O_laptop.Forms
             button4.Enabled = false;
             button5.Enabled = false;
 
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
-            textBox4.Enabled = false;
-            textBox6.Enabled = false;
+            userIdText.Enabled = false;
+            userNameText.Enabled = false;
+            userEmailText.Enabled = false;
+            userPasswordText.Enabled = false;
+            userPhoneText.Enabled = false;
 
-            radioButton1.Enabled = false;
-            radioButton2.Enabled = false;
+            maleButton.Enabled = false;
+            femaleButton.Enabled = false;
 
-            dateTimePicker1.Enabled = false;
+            userDoB.Enabled = false;
 
-            richTextBox1.Enabled = false;
+            userAddressText.Enabled = false;
 
-            comboBox1.Enabled = false;
+            userRole.Enabled = false;
 
             int cntr = de.Users.Count();
             if (cntr < 9) userID += "00";

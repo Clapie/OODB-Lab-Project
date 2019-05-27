@@ -15,11 +15,31 @@ namespace Discover_O_laptop
     {
         LoginForm loginForm = null;
         User user = new User();
-
+        
         public Form1()
         {
             InitializeComponent();
+            addcustomadmin();
             logout();
+        }
+
+        public void addcustomadmin()
+        {
+            Database1Entities de = new Database1Entities();
+            User obj = new User();
+            string userID = null;
+            userID += "US";
+            obj.UserID = userID;
+            obj.UserName = "admin";
+            obj.UserEmail = "admin@bunis.com";
+            obj.UserGender = "Male";
+            obj.UserDoB = DateTime.Now;
+            obj.UserPhone = "081234567890";
+            obj.UserAddress = "bunis Street";
+            obj.UserPassword =  "admin";
+            obj.UserRole = "admin";
+            de.Users.Add(obj);
+            de.SaveChanges();
         }
 
         public void loginAdmin()
