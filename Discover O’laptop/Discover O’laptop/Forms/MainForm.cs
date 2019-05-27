@@ -1,4 +1,5 @@
 ﻿using Discover_O_laptop.Forms;
+using Discover_O_laptop.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Discover_O_laptop
     public partial class Form1 : Form
     {
         LoginForm loginForm = null;
+        User user = new User();
 
         public Form1()
         {
@@ -25,11 +27,24 @@ namespace Discover_O_laptop
         {
             loginToolStripMenuItem.Visible = false;
             logoutToolStripMenuItem.Visible = true;
+            changePasswordToolStripMenuItem.Visible = true;
+            buyToolStripMenuItem.Visible = false;
+            manageToolStripMenuItem.Visible = true;
+            viewToolStripMenuItem.Visible = true;
+            transactionToolStripMenuItem.Visible = true;
+            historyToolStripMenuItem.Visible = false;
         }
 
         public void loginMember()
         {
-
+            loginToolStripMenuItem.Visible = false;
+            logoutToolStripMenuItem.Visible = true;
+            changePasswordToolStripMenuItem.Visible = true;
+            buyToolStripMenuItem.Visible = true;
+            manageToolStripMenuItem.Visible = false;
+            viewToolStripMenuItem.Visible = true;
+            transactionToolStripMenuItem.Visible = false;
+            historyToolStripMenuItem.Visible = true;
         }
 
         public void logout()

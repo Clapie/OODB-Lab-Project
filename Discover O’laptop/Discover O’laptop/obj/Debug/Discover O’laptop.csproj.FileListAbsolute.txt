@@ -5,11 +5,7 @@ C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bi
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.exe
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.pdb
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csprojResolveAssemblyReference.cache
-C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ChangePassword.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Form1.resources
-C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.MemberMainForm.resources
-C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.Register.resources
-C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.StaffMainForm.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Properties.Resources.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csproj.GenerateResource.Cache
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.exe
@@ -21,3 +17,5 @@ C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\ob
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ManageLaptopBrandForm.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ViewHistoryForm.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ViewTransactionForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.RegisterForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ChangePasswordForm.resources
