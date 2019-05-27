@@ -12,6 +12,7 @@ namespace Discover_O_laptop.Forms
 {
     public partial class ChangePasswordForm : Form
     {
+        
         public ChangePasswordForm()
         {
             InitializeComponent();
