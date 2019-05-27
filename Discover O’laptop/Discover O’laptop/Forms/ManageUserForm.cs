@@ -215,11 +215,11 @@ namespace Discover_O_laptop.Forms
         {
             insert = true;
 
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = true;
-            button5.Enabled = true;
+            insertButton.Enabled = false;
+            updateButton.Enabled = false;
+            deleteButton.Enabled = false;
+            saveButton.Enabled = true;
+            cancelButton.Enabled = true;
 
             userIdText.Enabled = true;
             userNameText.Enabled = true;
@@ -248,11 +248,11 @@ namespace Discover_O_laptop.Forms
 
             update = true;
 
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = true;
-            button5.Enabled = true;
+            insertButton.Enabled = false;
+            updateButton.Enabled = false;
+            deleteButton.Enabled = false;
+            saveButton.Enabled = true;
+            cancelButton.Enabled = true;
 
             userIdText.Enabled = true;
             userNameText.Enabled = true;
@@ -297,11 +297,11 @@ namespace Discover_O_laptop.Forms
             userID = "US";
             insert = false;
             update = false;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = false;
-            button5.Enabled = false;
+            insertButton.Enabled = true;
+            updateButton.Enabled = true;
+            deleteButton.Enabled = true;
+            saveButton.Enabled = false;
+            cancelButton.Enabled = false;
 
             userIdText.Enabled = false;
             userNameText.Enabled = false;

@@ -75,38 +75,44 @@
             this.oldPassText.Location = new System.Drawing.Point(39, 54);
             this.oldPassText.Margin = new System.Windows.Forms.Padding(4);
             this.oldPassText.Name = "oldPassText";
+            this.oldPassText.PasswordChar = '*';
             this.oldPassText.Size = new System.Drawing.Size(289, 22);
             this.oldPassText.TabIndex = 3;
+            this.oldPassText.UseSystemPasswordChar = true;
             // 
             // newPassText
             // 
             this.newPassText.Location = new System.Drawing.Point(39, 128);
             this.newPassText.Margin = new System.Windows.Forms.Padding(4);
             this.newPassText.Name = "newPassText";
+            this.newPassText.PasswordChar = '*';
             this.newPassText.Size = new System.Drawing.Size(289, 22);
             this.newPassText.TabIndex = 4;
+            this.newPassText.UseSystemPasswordChar = true;
             // 
             // newPass1Text
             // 
             this.newPass1Text.Location = new System.Drawing.Point(39, 206);
             this.newPass1Text.Margin = new System.Windows.Forms.Padding(4);
             this.newPass1Text.Name = "newPass1Text";
+            this.newPass1Text.PasswordChar = '*';
             this.newPass1Text.Size = new System.Drawing.Size(289, 22);
             this.newPass1Text.TabIndex = 5;
+            this.newPass1Text.UseSystemPasswordChar = true;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(95, 266);
+            this.button1.Location = new System.Drawing.Point(95, 250);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 28);
+            this.button1.Size = new System.Drawing.Size(168, 44);
             this.button1.TabIndex = 6;
             this.button1.Text = "Change Password";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ChangePassword
+            // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ChangePassword";
+            this.Name = "ChangePasswordForm";
             this.Text = "Change Password Form";
             this.ResumeLayout(false);
             this.PerformLayout();

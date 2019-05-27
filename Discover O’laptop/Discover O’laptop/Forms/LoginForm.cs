@@ -77,9 +77,17 @@ namespace Discover_O_laptop.Forms
                 select x.UserRole
                 ).FirstOrDefault();
 
+            var searchId = (
+                from x in de.Users
+                where x.UserName.Equals(userNameText.Text)
+                select x.UserID
+                ).FirstOrDefault();
+
             MessageBox.Show("You are logged in");
 
             MainForm parent = (MainForm)MdiParent;
+            currUser.Id = searchId.ToString();
+
             if (searchRole == "admin")
             {
                 parent.loginAdmin();

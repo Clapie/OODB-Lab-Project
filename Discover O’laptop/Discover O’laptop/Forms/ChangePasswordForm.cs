@@ -20,33 +20,59 @@ namespace Discover_O_laptop.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(oldPassText.Text == "")
+            //old pass empty
+            if (oldPassText.Text == "")
             {
                 MessageBox.Show("Old Password must be filled!");
+                return;
             }
 
-            // else if(oldPassText) not equal
+            //old pass not equal
+            Database1Entities de = new Database1Entities();
+            var searchpass = (
+               from x in de.Users
+               where x.UserID.Equals(currUser.Id)
+               select x.UserPassword
+               ).FirstOrDefault();
 
-            else if(newPassText.Text == "")
+            if (oldPassText.Text!=searchpass.ToString())
+            {
+                MessageBox.Show("Old Password doesn’t match with the current password");
+                return;
+            }
+
+            //new pass empty
+            else if (newPassText.Text == "")
             {
                 MessageBox.Show("New Password must be filled!");
+                return;
             }
 
-            else if (newPassText.Text.Length < 5)
+            //new pass length < 5
+            if (newPassText.Text.Length < 5)
             {
                 MessageBox.Show("New Password length must be 5 characters or more");
+                return;
             }
 
-            else if(newPass1Text.Text != newPassText.Text)
+            //confirm pass != new pass
+            if(newPass1Text.Text != newPassText.Text)
             {
                 MessageBox.Show("Re-type Password doesn’t match with New Password!");
+                return;
             }
 
-            else
-            {
-                MessageBox.Show("Successfully Change Password");
-                this.Close();
-            }
+            MessageBox.Show("Successfully Change Password");
+
+            var obj = (
+                from x in de.Users
+                where x.UserID.Equals(currUser.Id)
+                select x
+                ).FirstOrDefault();
+
+            obj.UserPassword = newPassText.Text;
+            de.SaveChanges();
+            this.Close();
         }
     }
 }

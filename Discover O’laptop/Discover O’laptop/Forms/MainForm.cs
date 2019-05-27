@@ -14,6 +14,7 @@ namespace Discover_O_laptop
     public partial class MainForm : Form
     {
         LoginForm loginForm = null;
+        ChangePasswordForm changepassForm = null;
         User user = new User();
         
         public MainForm()
@@ -29,6 +30,10 @@ namespace Discover_O_laptop
             User obj = new User();
             string userID = null;
             userID += "US";
+            int cntr = de.Users.Count();
+            if (cntr < 9) userID += "00";
+            else if (cntr < 99) userID += "0";
+            userID += (cntr + 1).ToString();
             obj.UserID = userID;
             obj.UserName = "admin";
             obj.UserEmail = "admin@bunis.com";
@@ -88,6 +93,22 @@ namespace Discover_O_laptop
                 loginForm = new LoginForm();
                 loginForm.MdiParent = this;
                 loginForm.Show();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logout();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(currUser.Id);
+            if (changepassForm == null || changepassForm.IsDisposed == true)
+            {
+                changepassForm = new ChangePasswordForm();
+                changepassForm.MdiParent = this;
+                changepassForm.Show();
             }
         }
     }
