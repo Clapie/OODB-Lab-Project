@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BuyLaptopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuyLaptopForm.Designer.cs">
+      <DependentUpon>BuyLaptopForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,36 @@
     </Compile>
     <Compile Include="Forms\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewHistoryForm.Designer.cs">
+      <DependentUpon>ViewHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewTransactionForm.Designer.cs">
+      <DependentUpon>ViewTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUserForm.Designer.cs">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageLaptopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageLaptopForm.Designer.cs">
+      <DependentUpon>ManageLaptopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageLaptopBrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageLaptopBrandForm.Designer.cs">
+      <DependentUpon>ManageLaptopBrandForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\login.cs">
       <SubType>Form</SubType>
@@ -99,14 +135,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BuyLaptopForm.resx">
+      <DependentUpon>BuyLaptopForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUserForm.resx">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageLaptopForm.resx">
+      <DependentUpon>ManageLaptopForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageLaptopBrandForm.resx">
+      <DependentUpon>ManageLaptopBrandForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MemberMainForm.resx">
       <DependentUpon>MemberMainForm.cs</DependentUpon>
@@ -116,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaffMainForm.resx">
       <DependentUpon>StaffMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewHistoryForm.resx">
+      <DependentUpon>ViewHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewTransactionForm.resx">
+      <DependentUpon>ViewTransactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
