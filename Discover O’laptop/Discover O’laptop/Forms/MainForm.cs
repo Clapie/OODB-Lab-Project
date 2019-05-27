@@ -1,5 +1,4 @@
 ﻿using Discover_O_laptop.Forms;
-using Discover_O_laptop.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

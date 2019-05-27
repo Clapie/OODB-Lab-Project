@@ -12,16 +12,10 @@ namespace Discover_O_laptop
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class HeaderTransaction
     {
+        public string TransactionID { get; set; }
         public string UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserGender { get; set; }
-        public string UserEmail { get; set; }
-        public System.DateTime UserDoB { get; set; }
-        public string UserPhone { get; set; }
-        public string UserAddress { get; set; }
-        public string UserPassword { get; set; }
-        public string UserRole { get; set; }
+        public string TransactionDate { get; set; }
     }
 }

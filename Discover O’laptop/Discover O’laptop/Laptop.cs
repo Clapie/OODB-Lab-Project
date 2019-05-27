@@ -12,16 +12,14 @@ namespace Discover_O_laptop
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Laptop
     {
-        public string UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserGender { get; set; }
-        public string UserEmail { get; set; }
-        public System.DateTime UserDoB { get; set; }
-        public string UserPhone { get; set; }
-        public string UserAddress { get; set; }
-        public string UserPassword { get; set; }
-        public string UserRole { get; set; }
+        public string LaptopID { get; set; }
+        public string LaptopBrandID { get; set; }
+        public string LaptopName { get; set; }
+        public string LaptopSize { get; set; }
+        public string LaptopVGA { get; set; }
+        public string LaptopRAM { get; set; }
+        public int LaptopPrice { get; set; }
     }
 }
