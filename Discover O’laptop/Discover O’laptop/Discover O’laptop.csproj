@@ -67,11 +67,11 @@
     <Compile Include="Forms\BuyLaptopForm.Designer.cs">
       <DependentUpon>BuyLaptopForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChangePassword.cs">
       <SubType>Form</SubType>
@@ -109,29 +109,17 @@
     <Compile Include="Forms\ManageLaptopBrandForm.Designer.cs">
       <DependentUpon>ManageLaptopBrandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\login.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MemberMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MemberMainForm.Designer.cs">
-      <DependentUpon>MemberMainForm.cs</DependentUpon>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StaffMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StaffMainForm.Designer.cs">
-      <DependentUpon>StaffMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,8 +129,8 @@
     <EmbeddedResource Include="Forms\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageUserForm.resx">
       <DependentUpon>ManageUserForm.cs</DependentUpon>
@@ -150,20 +138,14 @@
     <EmbeddedResource Include="Forms\ManageLaptopForm.resx">
       <DependentUpon>ManageLaptopForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageLaptopBrandForm.resx">
       <DependentUpon>ManageLaptopBrandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MemberMainForm.resx">
-      <DependentUpon>MemberMainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StaffMainForm.resx">
-      <DependentUpon>StaffMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewHistoryForm.resx">
       <DependentUpon>ViewHistoryForm.cs</DependentUpon>
