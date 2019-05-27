@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Discover_O_laptop
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         LoginForm loginForm = null;
         User user = new User();
         
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             addcustomadmin();

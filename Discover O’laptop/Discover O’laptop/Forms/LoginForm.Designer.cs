@@ -32,9 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.userNameText = new System.Windows.Forms.TextBox();
+            this.userPasswordText = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,45 +82,47 @@
             this.linkLabel1.Text = "Don\'t have accout? Click Here";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // textBox1
+            // userNameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 94);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 22);
-            this.textBox1.TabIndex = 4;
+            this.userNameText.Location = new System.Drawing.Point(50, 94);
+            this.userNameText.Margin = new System.Windows.Forms.Padding(4);
+            this.userNameText.Name = "userNameText";
+            this.userNameText.Size = new System.Drawing.Size(282, 22);
+            this.userNameText.TabIndex = 4;
             // 
-            // textBox2
+            // userPasswordText
             // 
-            this.textBox2.Location = new System.Drawing.Point(50, 167);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 22);
-            this.textBox2.TabIndex = 5;
+            this.userPasswordText.Location = new System.Drawing.Point(50, 167);
+            this.userPasswordText.Margin = new System.Windows.Forms.Padding(4);
+            this.userPasswordText.Name = "userPasswordText";
+            this.userPasswordText.Size = new System.Drawing.Size(282, 22);
+            this.userPasswordText.TabIndex = 5;
+            this.userPasswordText.UseSystemPasswordChar = true;
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(120, 239);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 37);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.loginButton.Location = new System.Drawing.Point(120, 239);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(120, 37);
+            this.loginButton.TabIndex = 6;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 340);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.userPasswordText);
+            this.Controls.Add(this.userNameText);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "login";
             this.ResumeLayout(false);
@@ -134,8 +136,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox userNameText;
+        private System.Windows.Forms.TextBox userPasswordText;
+        private System.Windows.Forms.Button loginButton;
     }
 }

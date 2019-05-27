@@ -28,5 +28,67 @@ namespace Discover_O_laptop.Forms
             }
             this.Close();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            //username empty
+            if(userNameText.Text == "")
+            {
+                MessageBox.Show("Username must be filled!");
+                return;
+            }
+
+            //password empty
+            if(userPasswordText.Text == "")
+            {
+                MessageBox.Show("Password must be filled!");
+                return;
+            }
+
+            //Invalid Username and Password
+            Database1Entities de = new Database1Entities();
+            var search = (
+                from x in de.Users
+                where x.UserName.Equals(userNameText.Text)
+                select x.UserName
+                ).FirstOrDefault();
+
+            if (search != userNameText.Text)
+            {
+                MessageBox.Show("Invalid Username or Password!");
+                return;
+            }
+
+            var searchpass = (
+                from x in de.Users
+                where x.UserName.Equals(userNameText.Text)
+                select x.UserPassword
+                ).FirstOrDefault();
+
+            if (searchpass != userPasswordText.Text)
+            {
+                MessageBox.Show("Invalid Username or Password!");
+                return;
+            }
+
+            var searchRole = (
+                from x in de.Users
+                where x.UserName.Equals(userNameText.Text)
+                select x.UserRole
+                ).FirstOrDefault();
+
+            MessageBox.Show("You are logged in");
+
+            MainForm parent = (MainForm)MdiParent;
+            if (searchRole == "admin")
+            {
+                parent.loginAdmin();
+            }
+            if(searchRole == "member")
+            {
+                parent.loginMember();
+            }
+            this.Close();
+        }
     }
 }

@@ -3,7 +3,6 @@ C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bi
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.exe
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.pdb
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csprojResolveAssemblyReference.cache
-C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Form1.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Properties.Resources.resources
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csproj.GenerateResource.Cache
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.exe
@@ -43,3 +42,4 @@ C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bi
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\Database1_log.ldf
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\EntityFramework.dll
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.MainForm.resources
