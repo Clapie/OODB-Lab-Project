@@ -30,17 +30,17 @@
         {
             this.LaptopBrandGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.brandNameText = new System.Windows.Forms.TextBox();
+            this.brandIdText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.insertButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LaptopBrandGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -50,157 +50,155 @@
             // LaptopBrandGrid
             // 
             this.LaptopBrandGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LaptopBrandGrid.Location = new System.Drawing.Point(28, 21);
-            this.LaptopBrandGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.LaptopBrandGrid.Location = new System.Drawing.Point(37, 26);
+            this.LaptopBrandGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LaptopBrandGrid.Name = "LaptopBrandGrid";
             this.LaptopBrandGrid.RowTemplate.Height = 24;
-            this.LaptopBrandGrid.Size = new System.Drawing.Size(351, 168);
+            this.LaptopBrandGrid.Size = new System.Drawing.Size(468, 207);
             this.LaptopBrandGrid.TabIndex = 0;
             this.LaptopBrandGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LaptopBrandGrid_CellContentClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.brandNameText);
+            this.groupBox1.Controls.Add(this.brandIdText);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(28, 208);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(37, 256);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(350, 106);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(467, 130);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Brand Details";
             // 
-            // textBox2
+            // brandNameText
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 67);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 3;
+            this.brandNameText.Location = new System.Drawing.Point(189, 82);
+            this.brandNameText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.brandNameText.Name = "brandNameText";
+            this.brandNameText.Size = new System.Drawing.Size(173, 22);
+            this.brandNameText.TabIndex = 3;
             // 
-            // textBox1
+            // brandIdText
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 2;
+            this.brandIdText.Location = new System.Drawing.Point(189, 34);
+            this.brandIdText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.brandIdText.Name = "brandIdText";
+            this.brandIdText.Size = new System.Drawing.Size(173, 22);
+            this.brandIdText.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(44, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Brand Name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(44, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Brand ID";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(31, 319);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Controls.Add(this.deleteButton);
+            this.groupBox2.Controls.Add(this.updateButton);
+            this.groupBox2.Controls.Add(this.insertButton);
+            this.groupBox2.Location = new System.Drawing.Point(41, 393);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(348, 62);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(464, 76);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Action";
             // 
-            // button3
+            // deleteButton
             // 
-            this.button3.Location = new System.Drawing.Point(237, 17);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.deleteButton.Location = new System.Drawing.Point(316, 21);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(120, 37);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // updateButton
             // 
-            this.button2.Location = new System.Drawing.Point(129, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.updateButton.Location = new System.Drawing.Point(172, 21);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(120, 37);
+            this.updateButton.TabIndex = 1;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // insertButton
             // 
-            this.button1.Location = new System.Drawing.Point(22, 17);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.insertButton.Location = new System.Drawing.Point(29, 21);
+            this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.insertButton.Name = "insertButton";
+            this.insertButton.Size = new System.Drawing.Size(120, 37);
+            this.insertButton.TabIndex = 0;
+            this.insertButton.Text = "Insert";
+            this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Location = new System.Drawing.Point(31, 386);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Controls.Add(this.cancelButton);
+            this.groupBox3.Controls.Add(this.saveButton);
+            this.groupBox3.Location = new System.Drawing.Point(41, 475);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(349, 58);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(465, 71);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Confirmation";
             // 
-            // button5
+            // cancelButton
             // 
-            this.button5.Location = new System.Drawing.Point(188, 17);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 30);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.cancelButton.Location = new System.Drawing.Point(251, 21);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(120, 37);
+            this.cancelButton.TabIndex = 4;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // saveButton
             // 
-            this.button4.Location = new System.Drawing.Point(71, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.saveButton.Location = new System.Drawing.Point(95, 21);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(120, 37);
+            this.saveButton.TabIndex = 3;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // ManageLaptopBrandForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 463);
+            this.ClientSize = new System.Drawing.Size(548, 570);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LaptopBrandGrid);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageLaptopBrandForm";
             this.Text = "Manage Laptop Brand Form";
             ((System.ComponentModel.ISupportInitialize)(this.LaptopBrandGrid)).EndInit();
@@ -216,16 +214,16 @@
 
         private System.Windows.Forms.DataGridView LaptopBrandGrid;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox brandNameText;
+        private System.Windows.Forms.TextBox brandIdText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

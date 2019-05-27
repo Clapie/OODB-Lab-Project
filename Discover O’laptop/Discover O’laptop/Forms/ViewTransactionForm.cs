@@ -15,7 +15,6 @@ namespace Discover_O_laptop.Forms
         Database1Entities de = new Database1Entities();
         string transactionID;
         int month = 0;
-        string userID;
         public ViewTransactionForm()
         {
             InitializeComponent();

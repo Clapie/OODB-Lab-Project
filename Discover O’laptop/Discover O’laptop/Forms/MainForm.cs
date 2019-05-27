@@ -15,6 +15,13 @@ namespace Discover_O_laptop
     {
         LoginForm loginForm = null;
         ChangePasswordForm changepassForm = null;
+        ManageLaptopBrandForm managebrandForm = null;
+        ManageLaptopForm managelaptopForm = null;
+        ManageUserForm manageuserForm = null;
+        ViewHistoryForm historyForm = null;
+        ViewTransactionForm transactionForm = null;
+        BuyLaptopForm buyForm = null;
+
         User user = new User();
         
         public MainForm()
@@ -103,12 +110,71 @@ namespace Discover_O_laptop
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(currUser.Id);
             if (changepassForm == null || changepassForm.IsDisposed == true)
             {
                 changepassForm = new ChangePasswordForm();
                 changepassForm.MdiParent = this;
                 changepassForm.Show();
+            }
+        }
+
+        private void buyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (buyForm == null || buyForm.IsDisposed == true)
+            {
+                buyForm = new BuyLaptopForm();
+                buyForm.MdiParent = this;
+                buyForm.Show();
+            }
+        }
+
+        private void laptopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (managelaptopForm == null || managelaptopForm.IsDisposed == true)
+            {
+                managelaptopForm = new ManageLaptopForm();
+                managelaptopForm.MdiParent = this;
+                managelaptopForm.Show();
+            }
+        }
+
+        private void laptopBrandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (managebrandForm == null || managebrandForm.IsDisposed == true)
+            {
+                managebrandForm = new ManageLaptopBrandForm();
+                managebrandForm.MdiParent = this;
+                managebrandForm.Show();
+            }
+        }
+
+        private void transactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (transactionForm == null || transactionForm.IsDisposed == true)
+            {
+                transactionForm = new ViewTransactionForm();
+                transactionForm.MdiParent = this;
+                transactionForm.Show();
+            }
+        }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (historyForm == null || historyForm.IsDisposed == true)
+            {
+                historyForm = new ViewHistoryForm();
+                historyForm.MdiParent = this;
+                historyForm.Show();
+            }
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (manageuserForm == null || manageuserForm.IsDisposed == true)
+            {
+                manageuserForm = new ManageUserForm();
+                manageuserForm.MdiParent = this;
+                manageuserForm.Show();
             }
         }
     }

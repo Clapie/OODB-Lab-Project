@@ -23,13 +23,19 @@ namespace Discover_O_laptop.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text.Length<2 || textBox2.Text.Length > 15)
+            if(brandNameText.Text.Length<2 || brandNameText.Text.Length > 15)
             {
                 MessageBox.Show("Brand name must between 2-15 characters");
                 return;
             }
             
-            if((from x in de.LaptopBrands where x.LaptopBrandName.Equals(textBox2.Text) select x).Count()!=0)
+            var search = (
+                from x in de.LaptopBrands
+                where x.LaptopBrandName.Equals(brandNameText.Text)
+                select x.LaptopBrandName
+                ).FirstOrDefault();
+
+            if (search == brandNameText.Text)
             {
                 MessageBox.Show("Username already exist!");
                 return;
@@ -39,15 +45,19 @@ namespace Discover_O_laptop.Forms
             {
                 LaptopBrand obj = new LaptopBrand();
                 obj.LaptopBrandID = brandID;
-                obj.LaptopBrandName = textBox2.Text;
+                obj.LaptopBrandName = brandNameText.Text;
                 de.LaptopBrands.Add(obj);
             }
 
             if (update)
             {
-                var obj = (from x in de.LaptopBrands where x.LaptopBrandID == textBox2.Text select x).FirstOrDefault();
-                obj.LaptopBrandID = textBox1.Text;
-                obj.LaptopBrandName = textBox2.Text;
+                var temp = (
+                    from x in de.LaptopBrands
+                    where x.LaptopBrandID.Equals(brandIdText.Text)
+                    select x
+                    ).FirstOrDefault();
+                temp.LaptopBrandID = brandIdText.Text;
+                temp.LaptopBrandName = brandNameText.Text;
             }
 
             de.SaveChanges();
@@ -57,47 +67,53 @@ namespace Discover_O_laptop.Forms
 
         private void LaptopBrandGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = LaptopBrandGrid.CurrentRow.Cells[0].Value.ToString();
-            textBox2.Text = LaptopBrandGrid.CurrentRow.Cells[1].Value.ToString();
+            brandIdText.Text = LaptopBrandGrid.CurrentRow.Cells[0].Value.ToString();
+            brandNameText.Text = LaptopBrandGrid.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             insert = true;
-            textBox1.Text = brandID;
-            textBox2.Enabled = true;
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = true;
-            button5.Enabled = true;
+            brandIdText.Text = brandID;
+            brandNameText.Enabled = true;
+            insertButton.Enabled = false;
+            updateButton.Enabled = false;
+            deleteButton.Enabled = false;
+            saveButton.Enabled = true;
+            cancelButton.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (brandIdText.Text == "")
             {
                 MessageBox.Show("Please select data first");
                 return;
             }
             update = true;
-            textBox2.Enabled = true;
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = true;
-            button5.Enabled = true;
+            brandNameText.Enabled = true;
+            insertButton.Enabled = false;
+            updateButton.Enabled = false;
+            deleteButton.Enabled = false;
+            saveButton.Enabled = true;
+            cancelButton.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (brandIdText.Text == "")
             {
                 MessageBox.Show("Please select data first");
                 return;
             }
 
-            var obj = (from x in de.LaptopBrands where x.LaptopBrandID == textBox1.Text select x).FirstOrDefault();
+            var obj = (
+                from x in de.LaptopBrands
+                where x.LaptopBrandID == brandIdText.Text
+                select x
+                ).FirstOrDefault();
+
+
             switch (MessageBox.Show("Are you sure want to delete this data?", "Message", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:
@@ -121,13 +137,13 @@ namespace Discover_O_laptop.Forms
             brandID = "BN";
             insert = false;
             update = false;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
+            insertButton.Enabled = true;
+            updateButton.Enabled = true;
+            deleteButton.Enabled = true;
+            saveButton.Enabled = false;
+            cancelButton.Enabled = false;
+            brandIdText.Enabled = false;
+            brandNameText.Enabled = false;
             int cntr = de.LaptopBrands.Count();
             if (cntr < 9) brandID += "00";
             else if (cntr < 99) brandID += "0";
@@ -141,10 +157,5 @@ namespace Discover_O_laptop.Forms
                        }).ToList();
             LaptopBrandGrid.DataSource = obj;
         }
-
-
-
-
-        
     }
 }
