@@ -1,0 +1,22 @@
+How to use The application :
+
+First of all, you can login as admin with 
+username 	: admin
+password 	: admin
+
+
+Picture Reference :
+https://i.pinimg.com/originals/66/27/61/662761b06ef121363a9eddff037a2413.jpg
+
+
+Forms :
+Main Form
+Login Form
+Register Form
+Change Password Form
+Manage Laptop Brand Form
+Manage Laptop Form
+Manage User Form
+View Transaction Form 
+Buy Laptop Form
+View History Form
