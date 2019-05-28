@@ -165,11 +165,16 @@ namespace Discover_O_laptop.Forms
                 obj.UserPassword = userPasswordText.Text;
                 obj.UserRole = userRole.SelectedItem.ToString();
                 de.Users.Add(obj);
+                insert = false;
             }
 
             if (update)
             {
-                var obj = (from x in de.Users where x.UserID.Equals(userIdText.Text) select x).FirstOrDefault();
+                var obj = (
+                    from x in de.Users
+                    where x.UserID.Equals(userIdText.Text)
+                    select x
+                    ).FirstOrDefault();
 
                 obj.UserName = userNameText.Text;
                 obj.UserEmail = userEmailText.Text;
@@ -180,8 +185,9 @@ namespace Discover_O_laptop.Forms
                 obj.UserAddress = userAddressText.Text;
                 obj.UserPassword = userPasswordText.Text;
                 obj.UserRole = userRole.SelectedItem.ToString();
+                
+                update = false;
             }
-
             de.SaveChanges();
             MessageBox.Show("Data has been inserted/updated successfully");
             loadData();
@@ -221,7 +227,8 @@ namespace Discover_O_laptop.Forms
             saveButton.Enabled = true;
             cancelButton.Enabled = true;
 
-            userIdText.Enabled = true;
+            userIdText.Enabled = false;
+            userIdText.Text = userID;
             userNameText.Enabled = true;
             userEmailText.Enabled = true;
             userPasswordText.Enabled = true;
@@ -278,7 +285,11 @@ namespace Discover_O_laptop.Forms
                 return;
             }
 
-            var obj = (from x in de.Users where x.UserID.Equals(userIdText.Text) select x).FirstOrDefault();
+            var obj = (
+                from x in de.Users
+                where x.UserID.Equals(userIdText.Text)
+                select x
+                ).FirstOrDefault();
             switch (MessageBox.Show("Are you sure want to delete this data?", "Message", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:

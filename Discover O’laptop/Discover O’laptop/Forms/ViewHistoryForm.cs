@@ -29,42 +29,45 @@ namespace Discover_O_laptop.Forms
         {
             if (month != 0)
             {
-                var obj = (from x in de.HeaderTransactions
-                           join y in de.Users on x.UserID equals y.UserID
-                           where (x.TransactionDate.Substring(3, 2).Equals(month.ToString()) || x.TransactionDate.Substring(4, 1).Equals(month.ToString()))
-                           select new
-                           {
-                               TransactionID = x.TransactionID,
-                               UserID = x.UserID,
-                               UserName = y.UserName,
-                               TransactionDate = x.TransactionDate
-                           }).ToList();
+                var obj = (
+                    from x in de.HeaderTransactions
+                    join y in de.Users on x.UserID equals y.UserID
+                    where (x.TransactionDate.Substring(3, 2).Equals(month.ToString()) || x.TransactionDate.Substring(4, 1).Equals(month.ToString()))
+                    select new
+                    {
+                        TransactionID = x.TransactionID,
+                        UserID = x.UserID,
+                        UserName = y.UserName,
+                        TransactionDate = x.TransactionDate
+                    }).ToList();
                 dataGridView1.DataSource = obj;
             }
             else
             {
-                var obj = (from x in de.HeaderTransactions
-                           join y in de.Users on x.UserID equals y.UserID
-                           select new
-                           {
-                               TransactionID = x.TransactionID,
-                               UserID = x.UserID,
-                               UserName = y.UserName,
-                               TransactionDate = x.TransactionDate
-                           }).ToList();
+                var obj = (
+                    from x in de.HeaderTransactions
+                    join y in de.Users on x.UserID equals y.UserID
+                    select new
+                    {
+                        TransactionID = x.TransactionID,
+                        UserID = x.UserID,
+                        UserName = y.UserName,
+                        TransactionDate = x.TransactionDate
+                    }).ToList();
                 dataGridView1.DataSource = obj;
             }
 
             if (transactionID != "")
             {
-                var obj = (from x in de.DetailTransactions
-                           where x.TransactionID.Equals(transactionID)
-                           select new
-                           {
-                               LaptopID = x.LaptopID,
-                               Quantity = x.Quantity
+                var obj = (
+                    from x in de.DetailTransactions
+                    where x.TransactionID.Equals(transactionID)
+                    select new
+                    {
+                        LaptopID = x.LaptopID,
+                        Quantity = x.Quantity
 
-                           }).ToList();
+                    }).ToList();
                 dataGridView2.DataSource = obj;
             }
         }

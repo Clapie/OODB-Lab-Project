@@ -23,46 +23,59 @@ namespace Discover_O_laptop.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            String laptopSize = textBox4.Text;
-            
+            String laptopSize = laptopSizeText.Text;
 
-            if (textBox2.Text == "")
+            //empty laptop name
+            if (laptopNameText.Text == "")
             {
                 MessageBox.Show("Laptop name must be filled");
                 return;
             }
 
+            //laptop brand not chosen
+            if (laptopBrandBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Laptop Brand must be chosen!");
+                return;
+            }
+
+            //empty laptop size
             if (laptopSize == "")
             {
                 MessageBox.Show("Laptop size must be filled");
                 return;
             }
 
+            //laptop size does not ends with inch
             if (laptopSize[laptopSize.Length - 4] != 'i' || laptopSize[laptopSize.Length - 3] != 'n' || laptopSize[laptopSize.Length - 2] != 'c' || laptopSize[laptopSize.Length - 1] != 'h')
             {
                 MessageBox.Show("Laptop size must ends with inch");
                 return;
             }
 
-            if (textBox5.Text == "")
+            //empty laptop VGA 
+            if (laptopVGAText.Text == "")
             {
                 MessageBox.Show("Laptop VGA field must be filled");
                 return;
             }
 
-            if (numericUpDown1.Value < 2)
+            //laptop RAM less than 2
+            if (laptopRAM.Value < 2)
             {
                 MessageBox.Show("Laptop RAM must be at least 2 or more");
                 return;
             }
 
-            if (textBox7.Text == "")
+            //empty laptop price
+            if (laptopPriceText.Text == "")
             {
                 MessageBox.Show("Laptop price must be filled");
                 return;
             }
 
-            if (textBox7.Text.All(Char.IsLetter))
+            //laptop price not numeric
+            if (!laptopPriceText.Text.All(Char.IsDigit))
             {
                 MessageBox.Show("Laptop price must be numeric");
                 return;
@@ -71,30 +84,42 @@ namespace Discover_O_laptop.Forms
             if (insert)
             {
                 Laptop obj = new Laptop();
-                obj.LaptopID = textBox1.Text;
-                obj.LaptopName = textBox2.Text;
-                obj.LaptopBrandID = (from x in de.LaptopBrands
-                                    where x.LaptopBrandName.Equals(comboBox1.SelectedValue.ToString())
-                                    select x.LaptopBrandID).FirstOrDefault();
-                obj.LaptopSize = textBox4.Text;
-                obj.LaptopVGA = textBox5.Text;
-                obj.LaptopRAM = numericUpDown1.Value.ToString();
-                obj.LaptopPrice = int.Parse(textBox7.Text);
+                obj.LaptopID = laptopIdText.Text;
+                obj.LaptopName = laptopNameText.Text;
+
+                obj.LaptopBrandID = (
+                    from x in de.LaptopBrands
+                    where x.LaptopBrandName.Equals(laptopBrandBox.SelectedValue.ToString())
+                    select x.LaptopBrandID
+                    ).FirstOrDefault();
+
+                obj.LaptopSize = this.laptopSizeText.Text;
+                obj.LaptopVGA = laptopVGAText.Text;
+                obj.LaptopRAM = laptopRAM.Value.ToString();
+                obj.LaptopPrice = int.Parse(laptopPriceText.Text);
                 de.Laptops.Add(obj);
 
             }
             if (update)
             {
-                var obj = (from x in de.Laptops where x.LaptopID.Equals(textBox1.Text) select x).FirstOrDefault();
-                obj.LaptopID = textBox1.Text;
-                obj.LaptopName = textBox2.Text;
-                obj.LaptopBrandID = (from x in de.LaptopBrands
-                                     where x.LaptopBrandName.Equals(comboBox1.SelectedValue.ToString())
-                                     select x.LaptopBrandID).FirstOrDefault();
-                obj.LaptopSize = textBox4.Text;
-                obj.LaptopVGA = textBox5.Text;
-                obj.LaptopRAM = numericUpDown1.Value.ToString();
-                obj.LaptopPrice = int.Parse(textBox7.Text);
+                var obj = (
+                    from x in de.Laptops
+                    where x.LaptopID.Equals(laptopIdText.Text)
+                    select x
+                    ).FirstOrDefault();
+
+                obj.LaptopID = laptopIdText.Text;
+                obj.LaptopName = laptopNameText.Text;
+                obj.LaptopBrandID = (
+                    from x in de.LaptopBrands
+                    where x.LaptopBrandName.Equals(laptopBrandBox.SelectedValue.ToString())
+                    select x.LaptopBrandID
+                    ).FirstOrDefault();
+
+                obj.LaptopSize = this.laptopSizeText.Text;
+                obj.LaptopVGA = laptopVGAText.Text;
+                obj.LaptopRAM = laptopRAM.Value.ToString();
+                obj.LaptopPrice = int.Parse(laptopPriceText.Text);
             }
             de.SaveChanges();
             MessageBox.Show("Data has been successfully inserted/updated");
@@ -104,25 +129,26 @@ namespace Discover_O_laptop.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             insert = true;
+            laptopIdText.Text = laptopID;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
             button4.Enabled = true;
             button5.Enabled = true;
 
-            textBox1.Enabled = true;
-            textBox2.Enabled = true;
-            textBox4.Enabled = true;
-            textBox5.Enabled = true;
-            textBox7.Enabled = true;
-            comboBox1.Enabled = true;
-            numericUpDown1.Enabled = true;
+            laptopIdText.Enabled = false;
+            laptopNameText.Enabled = true;
+            laptopSizeText.Enabled = true;
+            laptopVGAText.Enabled = true;
+            laptopPriceText.Enabled = true;
+            laptopBrandBox.Enabled = true;
+            laptopRAM.Enabled = true;
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (laptopIdText.Text == "")
             {
                 MessageBox.Show("Please select data first");
                 return;
@@ -134,25 +160,25 @@ namespace Discover_O_laptop.Forms
             button4.Enabled = true;
             button5.Enabled = true;
 
-            textBox1.Enabled = true;
-            textBox2.Enabled = true;
-            textBox4.Enabled = true;
-            textBox5.Enabled = true;
-            textBox7.Enabled = true;
-            comboBox1.Enabled = true;
-            numericUpDown1.Enabled = true;
+            laptopIdText.Enabled = true;
+            laptopNameText.Enabled = true;
+            laptopSizeText.Enabled = true;
+            laptopVGAText.Enabled = true;
+            laptopPriceText.Enabled = true;
+            laptopBrandBox.Enabled = true;
+            laptopRAM.Enabled = true;
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            textBox5.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            numericUpDown1.Value = int.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
-            textBox7.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            laptopIdText.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            laptopBrandBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            laptopNameText.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            laptopSizeText.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            laptopVGAText.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            laptopRAM.Value = int.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+            laptopPriceText.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -162,12 +188,12 @@ namespace Discover_O_laptop.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (laptopIdText.Text == "")
             {
                 MessageBox.Show("Please select data first");
                 return;
             }
-            var obj = (from x in de.Laptops where x.LaptopID.Equals(textBox1.Text) select x).FirstOrDefault();
+            var obj = (from x in de.Laptops where x.LaptopID.Equals(laptopIdText.Text) select x).FirstOrDefault();
             switch (MessageBox.Show("Are you sure want to delete this data?", "Message", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:
@@ -184,11 +210,11 @@ namespace Discover_O_laptop.Forms
         public void loadData()
         {
             laptopID = "LP";
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox7.Text = "";
+            laptopIdText.Text = "";
+            laptopNameText.Text = "";
+            laptopSizeText.Text = "";
+            laptopVGAText.Text = "";
+            laptopPriceText.Text = "";
 
             insert = false;
             update = false;
@@ -199,38 +225,38 @@ namespace Discover_O_laptop.Forms
             button4.Enabled = false;
             button5.Enabled = false;
 
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox4.Enabled = false;
-            textBox5.Enabled = false;
-            textBox7.Enabled = false;
-            comboBox1.Enabled = false;
-            numericUpDown1.Enabled = false;
+            laptopIdText.Enabled = false;
+            laptopNameText.Enabled = false;
+            laptopSizeText.Enabled = false;
+            laptopVGAText.Enabled = false;
+            laptopPriceText.Enabled = false;
+            laptopBrandBox.Enabled = false;
+            laptopRAM.Enabled = false;
             int cntr = de.Laptops.Count();
             if (cntr < 9) laptopID += "00";
             else if (cntr < 99) laptopID += "0";
             laptopID += (cntr + 1).ToString();
-            var obj = (from x in de.Laptops
-                       join y in de.LaptopBrands on x.LaptopBrandID equals y.LaptopBrandID
-                       select new
-                       {
-                           LaptopID = x.LaptopID,
-                           LaptopBrandName = y.LaptopBrandName,
-                           LaptopName = x.LaptopName,
-                           LaptopSize = x.LaptopSize,
-                           LaptopVGA = x.LaptopVGA,
-                           LaptopRAM = x.LaptopRAM,
-                           LaptopPrice = x.LaptopPrice
-                       }).ToList();
+
+            var obj = (
+                from x in de.Laptops
+                join y in de.LaptopBrands on x.LaptopBrandID equals y.LaptopBrandID
+                select new
+                {
+                    LaptopID = x.LaptopID,
+                    LaptopBrandName = y.LaptopBrandName,
+                    LaptopName = x.LaptopName,
+                    LaptopSize = x.LaptopSize,
+                    LaptopVGA = x.LaptopVGA,
+                    LaptopRAM = x.LaptopRAM,
+                    LaptopPrice = x.LaptopPrice
+                }).ToList();
             dataGridView1.DataSource = obj;
 
-            var bn = (from x in de.LaptopBrands
-                      select
-                          x.LaptopBrandName
-                      ).ToList();
-            comboBox1.DataSource = bn;
-
-            
+            var bn = (
+                from x in de.LaptopBrands
+                select x.LaptopBrandName
+                ).ToList();
+            laptopBrandBox.DataSource = bn;
         }
     }
 }
