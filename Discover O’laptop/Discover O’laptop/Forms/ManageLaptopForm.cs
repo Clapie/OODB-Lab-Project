@@ -14,7 +14,7 @@ namespace Discover_O_laptop.Forms
     {
         Database1Entities de = new Database1Entities();
         string laptopID;
-        bool insert, update;
+        bool insert = false, update = false;
         public ManageLaptopForm()
         {
             InitializeComponent();
@@ -98,6 +98,7 @@ namespace Discover_O_laptop.Forms
                 obj.LaptopRAM = laptopRAM.Value.ToString();
                 obj.LaptopPrice = int.Parse(laptopPriceText.Text);
                 de.Laptops.Add(obj);
+                insert = false;
 
             }
             if (update)
@@ -120,6 +121,7 @@ namespace Discover_O_laptop.Forms
                 obj.LaptopVGA = laptopVGAText.Text;
                 obj.LaptopRAM = laptopRAM.Value.ToString();
                 obj.LaptopPrice = int.Parse(laptopPriceText.Text);
+                update = false;
             }
             de.SaveChanges();
             MessageBox.Show("Data has been successfully inserted/updated");

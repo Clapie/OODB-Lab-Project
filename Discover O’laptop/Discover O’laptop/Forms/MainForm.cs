@@ -23,7 +23,7 @@ namespace Discover_O_laptop
         BuyLaptopForm buyForm = null;
 
         User user = new User();
-        
+        string userID = "";
         public MainForm()
         {
             InitializeComponent();
@@ -35,7 +35,6 @@ namespace Discover_O_laptop
         {
             Database1Entities de = new Database1Entities();
             User obj = new User();
-            string userID = null;
             userID += "US";
             int cntr = de.Users.Count();
             if (cntr < 9) userID += "00";
@@ -122,7 +121,7 @@ namespace Discover_O_laptop
         {
             if (buyForm == null || buyForm.IsDisposed == true)
             {
-                buyForm = new BuyLaptopForm();
+                buyForm = new BuyLaptopForm(userID);
                 buyForm.MdiParent = this;
                 buyForm.Show();
             }

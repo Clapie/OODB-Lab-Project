@@ -14,7 +14,7 @@ namespace Discover_O_laptop.Forms
     {
         Database1Entities de = new Database1Entities();
         string brandID;
-        bool insert, update;
+        bool insert = false, update = false;
         public ManageLaptopBrandForm()
         {
             InitializeComponent();
@@ -47,6 +47,7 @@ namespace Discover_O_laptop.Forms
                 obj.LaptopBrandID = brandID;
                 obj.LaptopBrandName = brandNameText.Text;
                 de.LaptopBrands.Add(obj);
+                insert = false;
             }
 
             if (update)
@@ -58,6 +59,7 @@ namespace Discover_O_laptop.Forms
                     ).FirstOrDefault();
                 temp.LaptopBrandID = brandIdText.Text;
                 temp.LaptopBrandName = brandNameText.Text;
+                update = false;
             }
 
             de.SaveChanges();

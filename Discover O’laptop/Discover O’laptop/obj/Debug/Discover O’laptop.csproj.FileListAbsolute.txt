@@ -22,7 +22,6 @@ C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O�
 C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.BuyLaptopForm.resources
 C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ChangePasswordForm.resources
-C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Form1.resources
 C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ManageUserForm.resources
 C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ManageLaptopForm.resources
 C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.LoginForm.resources
@@ -43,3 +42,26 @@ C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bi
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\EntityFramework.dll
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Asus\Desktop\Proyek-OODB-Lab\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.MainForm.resources
+C:\Users\Daniel Agatan\Desktop\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.MainForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.exe.config
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.exe
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.pdb
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\Database1.mdf
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\Database1_log.ldf
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.exe
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\Discover O’laptop.pdb
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\EntityFramework.dll
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.BuyLaptopForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ChangePasswordForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.MainForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ManageUserForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ManageLaptopForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.LoginForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ManageLaptopBrandForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.RegisterForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ViewHistoryForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Forms.ViewTransactionForm.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover_O_laptop.Properties.Resources.resources
+C:\Users\Asus\Desktop\Proyek-OODB-Lab\OODB-Lab-Project\Discover O’laptop\Discover O’laptop\obj\Debug\Discover O’laptop.csproj.GenerateResource.Cache
