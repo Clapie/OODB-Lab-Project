@@ -1,8 +1,4 @@
 # Object Oriented Database Lab Project
 
 ### Project content :
-* **Clustering**  
-    Cluster mushroom type with *Kohonen Self-Organizing Map*
-
-* **Classification**  
-    Glass classification model
+Create windows form of **Discover O’laptop** using Visual Studio 2015
